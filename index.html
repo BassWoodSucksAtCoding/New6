@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MythBusters</title>
+    <style>
+        /* Your existing styles */
+        /* Add any additional styles as needed */
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 10px 10px 30px 10px;
+            background-color: #82add3;
+            margin-top: 0;
+        }
+
+        .container2 {
+            display: flex;
+            justify-content: center;
+            padding: 10px 10px 30px 10px;
+            background-color: #81a7c9;
+            margin-top: 0;
+        }
+
+        .container3 {
+            display: flex;
+            justify-content: center;
+            padding: 10px 10px 30px 10px;
+            background-color: #82add3;
+            margin-top: 0;
+        }
+
+        .box-container {
+            display: flex;
+            flex-direction: column;
+            width: 1200px; /* Adjust the width as needed */
+            background-color: #F2E9E1; /* Light orange color */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-right: 500px; /* Shift the box to the right */
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.164);
+            transition: box-shadow 0.13s ease;
+        }
+
+        .box-container2 {
+            display: flex;
+            flex-direction: column;
+            width: 1200px; /* Adjust the width as needed */
+            background-color: #E0E0E0; /* Light orange color */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-left: 500px; /* Shift the box to the right */
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.164);
+            transition: box-shadow 0.13s ease;
+        }
+
+        .box-container3 {
+            display: flex;
+            flex-direction: column;
+            width: 1200px; /* Adjust the width as needed */
+            background-color: #fff4e6; /* Light orange color */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-right: 500px; /* Shift the box to the right */
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.164);
+            transition: box-shadow 0.13s ease;
+        }
+
+        .box-container:hover {
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+        }
+        .box-container2:hover {
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+        }
+        .box-container3:hover {
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .title-container {
+            font-family: 'Lato', sans-serif;
+            background-color:  #FF6F6F; /* Dark orange color */
+            padding: 20px;
+            border-radius: 15px 15px 0 0; /* Rounded top corners */
+            color: #F5F5F5;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            font-style: italic;
+            margin: -20px -20px -20px -20px; /* Adjust to fit inside the box */
+        }
+
+        .title-container2 {
+            font-family: 'Lato', sans-serif;
+            background-color:  #B0C4DE; /* Dark orange color */
+            padding: 20px;
+            border-radius: 15px 15px 0 0; /* Rounded top corners */
+            color: #F5F5F5;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            font-style: italic;
+            margin: -20px -20px -20px -20px; /* Adjust to fit inside the box */
+        }
+
+        .title-container3 {
+            font-family: 'Lato', sans-serif;
+            background-color:  #c8b7a6; /* Dark orange color */
+            padding: 20px;
+            border-radius: 15px 15px 0 0; /* Rounded top corners */
+            color: #F5F5F5;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            font-style: italic;
+            margin: -20px -20px -20px -20px; /* Adjust to fit inside the box */
+        }
+
+        .content-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .image-container1 {
+            position: relative;
+            height: 450px;
+            width: 400px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            margin-top: 10px;
+        }
+        .image-container2 {
+            position: relative;
+            height: 450px;
+            width: 400px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+            margin-left: 50px;
+            margin-top: 10px;
+        }
+
+        .image {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            border: 10px solid #ffffffab;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 20px; /* Gap below the image */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .image:hover img {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        .text-container2 {
+            max-width: 700px;
+            font-family: Arial, sans-serif;
+            margin-top: 10px;
+            margin-left: 50px;
+            margin-right: 20px;
+        }
+
+        .text-container1 {
+            max-width: 700px;
+            font-family: Arial, sans-serif;
+            margin-top: 10px;
+            margin-left: 15px;
+        }
+
+        .text-container1 .myth-1 {
+            font-size: 25px;
+            line-height: 1.6;
+            margin-bottom: 20px; /* Gap between the image and text */
+            color: #6D6D6D;
+            font-family: 'Raleway', sans-serif;
+            margin-top: 20px;
+        }
+
+        .text-container2 .myth-1 {
+            font-size: 25px;
+            line-height: 1.6;
+            margin-bottom: 20px; /* Gap between the image and text */
+            color: #6D6D6D;
+            font-family: 'Raleway', sans-serif;
+            margin-top: 20px;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay background */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Ensure the overlay is on top */
+        }
+
+        .popup-content {
+            background-color: #f2e9e1b4;
+            padding: 20px;
+            border-radius: 10px;
+            width: 700px;
+            height: 900px;
+            overflow: auto;
+            position: relative;
+            font-size: 20px;
+            line-height: 1.6;
+            color: #535353;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        /* Custom scrollbar styles */
+        .popup-content::-webkit-scrollbar {
+            width: 0; /* Hide scrollbar */
+        }
+
+        .popup-content {
+            -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+            scrollbar-width: none; /* Hide scrollbar in Firefox */
+        }
+
+        .popup img {
+            width: 100%;
+            height: auto;
+            margin: 50px 0px 20px 0px;
+        }
+
+        .popup .popup-text {
+            font-size: 18px; /* Adjust font size as needed */
+            color: rgb(60, 60, 60); /* Different color for popup text */
+            line-height: 1.6;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Myth 1 -->
+    <div class="container">
+        <div class="box-container" id="myth1">
+            <div class="title-container">Myth 1: Humans Only Use 10% of Their Brains</div>
+            <div class="content-container">
+                <div class="image-container2" data-popup="popupWindow1">
+                    <div class="image">
+                        <img src="brain.jpg" alt="">
+                    </div>
+                </div>
+                <div class="text-container2">
+                    <p class="myth-1">
+                      Imagine a world where unlocking your brain&#39;s full potential could lead to extraordinary abilities, from enhanced intelligence to superhuman skills. The intriguing myth that we only use 10% of our brains fuels this tantalizing fantasy and suggests that a vast reservoir of untapped power is just waiting to be discovered. But is there any scientific basis for this captivating claim? Click the image to delve into the fascinating truth about brain function and find out how much of your brain is actually in use!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Myth 2 -->
+    <div class="container2">
+        <div class="box-container2" id="myth2">
+            <div class="title-container2">Myth 2: Lightning Never Strikes the Same Place Twice</div>
+            <div class="content-container">
+                <div class="text-container1">
+                    <p class="myth-1">
+                      Ever heard that lightning can&#39;t strike the same place twice? The dramatic notion that lightning will never strike the same place twice often serves as a reassuring myth, suggesting that once a spot has been hit, it&#39;s safe from future strikes. This belief might offer comfort during stormy weather, but is it scientifically accurate? Explore the electrifying reality behind lightning strikes by clicking the image, and learn why this myth is more about folklore than facts. Prepare to be amazed by what actually happens during a lightning storm! 
+                    </p>
+                </div>
+                <div class="image-container1" data-popup="popupWindow2">
+                    <div class="image">
+                        <img src="lightning.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Myth 3 -->
+    <div class="container3">
+        <div class="box-container3" id="myth3">
+            <div class="title-container3">Myth 3: Eating Sugar Causes Hyperactivity in Children</div>
+            <div class="content-container">
+              <div class="image-container2" data-popup="popupWindow3">
+                <div class="image">
+                    <img src="sugar.webp" alt="">
+                </div>
+            </div>
+                <div class="text-container2">
+                    <p class="myth-1">
+                      Imagine a world where eating sugar instantly turns children into hyperactive bundles of energy. This widespread belief suggests that sugar directly causes behavioral changes, leading to increased activity levels and restlessness. Many parents and caregivers have long thought that cutting down on sugar could help manage hyperactivity. Click the image to explore the origins of this myth and discover what science really says about sugar and its effects on behavior. Uncover the truth behind this common misconception and learn how it became such a persistent idea.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup windows -->
+    <div class="popup" id="popupWindow1">
+        <div class="popup-content">
+            <span class="popup-close" data-popup="popupWindow1">&times;</span>
+            <p class="title-container">Humans Only Use 10% of Their Brains</p>
+            <img src="brain.jpg" alt="">
+            <p class="popup-text">
+              <b>The Myth:</b> It&#39;s often said that humans use only 10% of their brains, a claim that suggests a vast reservoir of untapped potential just waiting to be unlocked. This myth has permeated popular culture, inspiring self-help books and movies that imply we could dramatically enhance our abilities if we could just access the remaining 90%. <br>
+
+              <b>The Truth:</b> Neuroscientists have debunked this myth with extensive research. Brain imaging technologies, such as fMRI and PET scans, show that nearly every part of the brain is active at some point over the course of a day. Different tasks and activities activate different regions, but no part of the brain is entirely inactive or unused. The idea of using only 10% of our brains is a misunderstanding of how brain activity works and likely originates from early neuroscientific research or misinterpretations. In reality, the brain is a highly efficient organ, and its various regions work together to handle a range of complex functions. So, rather than having untapped "brainpower," we are already utilizing our brains to their full extent.
+            </p>
+        </div>
+    </div>
+
+    <div class="popup" id="popupWindow2">
+        <div class="popup-content">
+            <span class="popup-close" data-popup="popupWindow2">&times;</span>
+            <p class="title-container2">Lightning Never Strikes the Same Place Twice</p>
+            <img src="lightning.webp" alt="">
+            <p class="popup-text">
+              <b>The Myth:</b> Many people believe that lightning cannot strike the same place more than once. This notion is often used to suggest that certain places or people are "safe" from lightning after being struck once. <br> <br>
+
+              <b>The Truth:</b> In reality, lightning can and does strike the same place multiple times. For instance, tall structures like skyscrapers, radio towers, and even trees are struck repeatedly due to their height and the frequency of lightning strikes in their area. The Empire State Building, for example, is struck by lightning around 20-25 times a year. This myth likely persists because it offers a false sense of security and an oversimplified view of natural phenomena.
+            </p>
+        </div>
+    </div>
+
+    <div class="popup" id="popupWindow3">
+        <div class="popup-content">
+            <span class="popup-close" data-popup="popupWindow3">&times;</span>
+            <p class="title-container3">Eating Sugar Causes Hyperactivity in Children</p>
+            <img src="sugar.webp" alt="">
+            <p class="popup-text">
+              <b>The Myth:</b> The myth that sugar consumption directly causes hyperactivity in children has been prevalent for decades, often cited by parents and educators. This belief was popularized by early studies and anecdotal evidence suggesting a link between sugary diets and increased activity levels or behavioral issues. It became a common explanation for children’s energetic behavior, leading to widespread avoidance of sugar in hopes of curbing hyperactivity. <br> <br>
+
+              <b>The Truth:</b> Scientific research has consistently failed to find a direct link between sugar consumption and hyperactivity in children. Numerous studies have investigated this relationship and found no significant evidence that sugar has a direct effect on behavior. The perception of increased hyperactivity may be influenced by situational factors, such as the excitement of social events where sugary treats are often consumed. Psychological studies suggest that the expectation of sugar causing hyperactivity can lead to perceived behavioral changes due to placebo effects.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Function to handle showing and hiding popups
+        function setupPopups() {
+            // Get all image containers and popup close buttons
+            const imageContainers = document.querySelectorAll('.image-container');
+            const closeButtons = document.querySelectorAll('.popup-close');
+            const popups = document.querySelectorAll('.popup');
+
+            // Function to hide all popups
+            function hideAllPopups() {
+                popups.forEach(popup => popup.style.display = 'none');
+            }
+
+            // Add click event listeners to image containers
+            imageContainers.forEach(container => {
+                container.addEventListener('click', () => {
+                    const popupId = container.getAttribute('data-popup');
+                    hideAllPopups();
+                    document.getElementById(popupId).style.display = 'flex';
+                });
+            });
+
+            // Add click event listeners to close buttons
+            closeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const popupId = button.getAttribute('data-popup');
+                    document.getElementById(popupId).style.display = 'none';
+                });
+            });
+
+            // Add click event listener to window to hide popups on outside click
+            window.addEventListener('click', (event) => {
+                if (event.target.classList.contains('popup')) {
+                    event.target.style.display = 'none';
+                }
+            });
+        }
+
+        // Initialize popups
+        setupPopups();
+    </script>
+
+</body>
+</html>
